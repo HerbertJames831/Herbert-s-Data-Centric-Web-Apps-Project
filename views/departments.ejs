@@ -1,0 +1,31 @@
+<!--Creating a table to display information about the departments from the proj22 database(MySQL)-->
+<table>
+    <h1>Departments Page</h1>
+    <a style="font-size: 18px; font-weight: bold;" href="/">Home</a>
+    <tr>
+        <th>DID</th>
+        <th>Name</th>
+        <th>Budget</th>
+        <th>Location</th>
+        <th>Delete</th>
+    </tr>
+    <% depts.forEach((department)=>{ %>
+        <tr>
+            <td>
+                <%= department.did %>
+            </td>
+            <td>
+                <%= department.dname %>
+            </td>
+            <td>
+                <%= department.budget %>
+            </td>
+            <td>
+                <%= department.lid %>
+            </td>
+            <td> <a style="font-size: 18px; font-weight: bold;" href="/depts/delete/<%=department.did %>">Delete</a>
+            </td>
+        </tr>
+        <% }) %>
+
+</table>

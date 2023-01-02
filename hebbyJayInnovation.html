@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to the Hebby Jay Innovation Page</title>
+</head>
+
+<body>
+    <!--Displaying the Current Date and Time on the Page-->
+    <h1>The Current Date and Time is: <span id='date-time'></span>.</h1>
+    <h1>Hebby Jay Innovation Page</h1>
+    <div style="padding: 2px; margin-top:5px; background-color: aqua; box-shadow: inset 1px 1px -2px;">
+        <h3 style="font-weight: 600;">Developer's Details</h3>
+        <!--Displaying Developer's Details-->
+        <li style="font-size: 13px;">Student Name : Herbert James</li>
+        <li style="font-size: 13px;">Student ID : G00399030</li>
+        <li style="font-size: 13px;">Module Name : Data Centric Web Applications</li>
+        <li style="font-size: 13px;">Group Name : Group B</li>
+        <li style="font-size: 13px;">Lecturer : Gerard Harrison</li>
+        <li style="font-size: 13px;">College Name : Atlantic Technolgical University Galway</li>
+        <li style="font-size: 13px;">Deadline Date: 2nd January 2023</li>
+    </div>
+    <h2>App Review</h2>
+    <h2>Did You Like The App?</h2>
+    <h2>Please select Yes or No</h2>
+    <div>
+        <input type="radio" name="answer" value="Yes" id="yes">
+        <label for="yes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" name="answer" value="No" id="no">
+        <label for="no">No</label>
+    </div>
+    <p>
+        <button id="btn">Show Selected Answer</button>
+    </p>
+    <p id="userOutput"></p>
+    <script type="text/javascript">
+        var date_TIME = new Date();
+        document.getElementById('date-time').innerHTML = date_TIME
+        const d = new Date();
+        // Current Timestamp in milliseconds
+        let timeSTAMP = Date.now();
+        let date_object = new Date(timeSTAMP);
+        let date = date_object.getDate();
+        let month = date_object.getMonth() + 1;
+        let year = date_object.getFullYear();
+        //Displaying Current Date and Time in the Console
+        console.log(year + "-" + month + "-" + date);
+        //App Review
+        const button = document.querySelector('#btn');
+        const radio_BUTTONS = document.querySelectorAll('input[name="answer"]');
+        button.addEventListener("click", () => {
+            let selectedAnswer;
+            for (const radio_BUTTON of radio_BUTTONS) {
+                if (radio_BUTTON.checked) {
+                    selectedAnswer = radio_BUTTON.value;
+                    break;
+                }
+            }
+            userOutput.innerText = selectedAnswer ? `You selected ${selectedAnswer}` : `You have not selected any answer`;
+        })
+
+    </script>
+</body>
+
+</html>

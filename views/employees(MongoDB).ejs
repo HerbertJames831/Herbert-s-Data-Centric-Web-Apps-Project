@@ -1,0 +1,25 @@
+<!--Creating a table to show information about the employees from the employeesDB database(MongoDB)-->
+<table>
+    <h1>Employees(MongoDB) Page</h1>
+    <a style="font-size: 15px; font-weight: bold;" href="/employeesMongoDB/add">Add Employee(MongoDB)</a>
+    <br>
+    <a style="font-size: 18px; font-weight: bold;" href="/">Home</a>
+    <tr>
+        <th>EID</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <% emps.forEach((employee)=>{ %>
+        <tr>
+            <td>
+                <%= employee._id %>
+            </td>
+            <td>
+                <%= employee.phone %>
+            </td>
+            <td>
+                <%= employee.email %>
+            </td>
+        </tr>
+        <% }) %>
+</table>

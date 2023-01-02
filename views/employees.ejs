@@ -1,0 +1,29 @@
+<!--Creating a table to display employees information from the proj2022 database(MySQL)-->
+<table>
+    <h1>Employees Page</h1>
+    <tr>
+        <th>EID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Update</th>
+    </tr>
+    <% emps.forEach((employee)=>{ %>
+        <tr>
+            <td>
+                <%= employee.eid %>
+            </td>
+            <td>
+                <%= employee.ename %>
+            </td>
+            <td>
+                <%= employee.role %>
+            </td>
+            <td>
+                <%= employee.salary %>
+            </td>
+            <td> <a style="font-size: 12px; font-weight: bold;" href="/employees/edit/<%=employee.eid %>">Update</a>
+            </td>
+        </tr>
+        <% }) %>
+</table>

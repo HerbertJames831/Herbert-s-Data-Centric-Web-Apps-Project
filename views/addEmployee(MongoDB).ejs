@@ -1,0 +1,26 @@
+<!--Creating a form that lets the user to add an employee's information -->
+
+<body>
+    <h1>Add Employee</h1>
+    <% if(errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <form action="/employeesMongoDB/add" method="POST">
+                <label>EID</label>
+                <input type="text" name="_id" placeholder="Enter ID">
+                <br>
+                <label>Phone</label>
+                <input type="text" name="phone" placeholder="Enter Phone Number">
+                <br>
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Enter Email">
+                <br>
+                <input type="submit" value="Add">
+            </form>
+</body>
